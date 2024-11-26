@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./node_modules/@tenoxui/core/dist/tenoxui-full.min.js"></script>
+    <script src="./node_modules/@nousantx/color-generator/dist/index.umd.min.js"></script>
+    <script src="./node_modules/@nousantx/tenoxui-image-generator-config/plugin/index.umd.js"></script>
+    <script src="./dist/index.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="bg-green-500">Hello</div>
+    <div class="[padding]-2rem bgi-[linear-gradient(125deg,_rgb({red-500}),_rgb({green-500}))]">
+      Hello
+    </div>
+    <div class="bg-green-600">Hello</div>
+    <div class="tenox">Hello</div>
+
+    <button class="btn">Click Me</button>
+    <button class="btn btn-sm">Click Me</button>
+    <button class="btn btn-lg">Click Me</button>
+    <button class="btn btn-ghost">Click Me</button>
+    <script>
+      console
+      document.documentElement.setAttribute('child', __nsx_tui_styles.stringTemplate)
+      document.querySelectorAll('*').forEach(element => {
+        new __tenoxui_core.MakeTenoxUI({
+          element,
+          ...__nsx_img_tools.tenoxuiConfig,
+
+          attributify: true
+        }).useDOM()
+      })
+    </script>
+  </body>
+</html>
