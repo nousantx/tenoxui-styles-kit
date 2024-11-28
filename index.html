@@ -1,8 +1,5 @@
 <!doctype html>
-<html
-  lang="en"
-  child="(input[type='checkbox']:checked ~ .bg-neutral-100 over-scroll [transition]-[max-height_0.3s]): h-mx-300px;"
->
+<html lang="en" child="(input[type='checkbox']:checked ~ .ac-content): h-mx-300px;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,99 +24,119 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Inter', Sans-Serif;
+        font-family: 'Manrope', Sans-Serif;
+      }
+      /* Style for the collapsible */
+      .ac {
+        margin: 10px 0;
+      }
+
+      .ac-label {
+        display: block;
+        background: #0078d7;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .ac-content {
+        max-height: 0;
+        overflow: scroll;
+        background: #f1f1f1;
+        border-radius: 5px;
+        transition: max-height 0.3s;
+      }
+
+      .ac input[type='checkbox'] {
+        display: none;
       }
     </style>
   </head>
-  <body class="p-20px">
-    <div
-      id="tenoxui-accordion"
-      class="flex flex-w-wrap gap-1rem"
-      child="
-      (.ac-container): flex flex-d-column;
-      (.ac-toggle): [all]-unset w-auto p-1rem bg-neutral-900 hover:bg-neutral-800 center;
-      (p): fs-1rem fw-500 ls--0.015em lh-1.4;
-      (p:not(:first-child)): mt-1rem;
-    "
-    >
-      <div class="ac-container">
-        <button class="ac-toggle" onclick="toggle(`[data-ac='1']`,'h-mx-300px')">
-          Toggle Content
-        </button>
-        <div class="h-mx-0 bg-neutral-100 over-scroll [transition]-[max-height_0.3s]" data-ac="1">
-          <div class="p-1rem">
-            <p>This is the collapsible content. Add any content you want here!</p>
-            <p>This is the collapsible content. Add any content you want here!</p>
-            <p>This is the collapsible content. Add any content you want here!</p>
-            <p>This is the collapsible content. Add any content you want here!</p>
-          </div>
-        </div>
-      </div>
-      <div class="mt-1rem ac-container">
-        <button class="ac-toggle" onclick="toggle(`[data-ac='2']`,'h-mx-300px')">
-          Toggle Content
-        </button>
-        <div class="h-mx-0 bg-neutral-100 over-scroll [transition]-[max-height_0.3s]" data-ac="2">
-          <div class="p-1rem">
-            <p>This is the collapsible content. Add any content you want here!</p>
-            <p>This is the collapsible content. Add any content you want here!</p>
-            <p>This is the collapsible content. Add any content you want here!</p>
-            <p>This is the collapsible content. Add any content you want here!</p>
-          </div>
-        </div>
-      </div>
-      <div class="mt-1rem ac-container">
-        <button class="ac-toggle" onclick="toggle(`[data-ac='3']`,'h-mx-300px')">
-          Toggle Content
-        </button>
-        <div class="h-mx-0 bg-neutral-100 over-scroll [transition]-[max-height_0.3s]" data-ac="3">
-          <div class="p-1rem">
-            <p>This is the collapsible content. Add any content you want here!</p>
-            <p>This is the collapsible content. Add any content you want here!</p>
-            <p>This is the collapsible content. Add any content you want here!</p>
-            <p>This is the collapsible content. Add any content you want here!</p>
-          </div>
-        </div>
+  <body>
+    <div class="ac">
+      <input type="checkbox" id="ac-toggle" checked="checked" />
+      <label for="ac-toggle" class="ac-label" onClick="document.querySelector('#ac-1').classList.toggle('h-mx-300px')">Toggle Content</label>
+      <div id="ac-1" class="ac-content" data-accordion="1">
+        <p class="p-1rem">This is the collapsible content. Add any content you want here!</p>
+        <p class="p-1rem">This is the collapsible content. Add any content you want here!</p>
+        <p class="p-1rem">This is the collapsible content. Add any content you want here!</p>
+        <p class="p-1rem">This is the collapsible content. Add any content you want here!</p>
       </div>
     </div>
+    <div class="p-2rem">
+      <p class="family-manrope fs-1rem lh-1.3 ls--0.025em fw-500">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et fugit assumenda dolorem nihil,
+        alias.
+      </p>
+      <p class="mt-1rem family-inter fs-1rem lh-1.3 ls--0.015em fw-500">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et fugit assumenda dolorem nihil,
+        alias.
+      </p>
+      <p class="mt-1rem family-poppins fs-1rem lh-1.3 ls--0.035em fw-500">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et fugit assumenda dolorem nihil,
+        alias.
+      </p>
+    </div>
 
+    <div class="bg-green-500">Hello</div>
+    <div class="p-2rem bgi-[linear-gradient(125deg,_rgb({red-500}),_rgb({green-500}))]">Hello</div>
+    <div class="bg-green-600">Hello</div>
+    <div class="tenox">Hello</div>
+
+    <div
+      class="flex flex-w-wrap gap-2rem"
+      child="
+    "
+    >
+      <div class="my-svg box-20px"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="tx" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1m8.5 10.5V12h-1V9H9v3H7.5V9H6v4.5h3V15h1.5v-1.5zM18 15l-2.25-3L18 9h-1.75l-1.75 2.25V9H13v6h1.5v-2.25L16.25 15z"
+        />
+      </svg>
+      <div class="space-y-2.5">
+        <div class="box-100px bg-red-500 radius-md"></div>
+        <div class="box-100px bg-red-500 radius-md"></div>
+        <div class="box-100px bg-red-500 radius-md"></div>
+        <div class="box-100px bg-red-500 radius-md"></div>
+        <div class="box-100px bg-red-500 radius-md"></div>
+      </div>
+      <div class="box-100px bg-neutral-950 radius-sm"></div>
+      <div class="box-100px bg-neutral-950 rad"></div>
+      <div class="box-100px bg-neutral-950 radius-md"></div>
+      <div class="box-100px bg-neutral-950 radius-lg"></div>
+      <div class="box-100px bg-neutral-950 radius-xl"></div>
+      <div class="box-100px bg-neutral-950 radius-2xl"></div>
+      <div class="box-100px bg-neutral-950 radius-3xl"></div>
+      <div class="box-100px bg-neutral-950 radius-3xl"></div>
+      <div class="box-100px bg-neutral-950 radius-full"></div>
+      <div class="box-100px bg-neutral-950 br-20px"></div>
+
+      <span class="badge badge-xs badge-danger">High</span>
+      <span class="badge badge-sm badge-danger">High</span>
+      <span class="badge badge-danger">High</span>
+      <span class="badge">Neutral</span>
+      <span class="badge badge-success">Low</span>
+      <span class="badge badge-approve">Moderate</span>
+
+      <button class="btn bg-blue-600 hover:bg-blue-600 text-neutral-50 m-1rem">View All</button>
+      <button class="btn">Click Me</button>
+      <button class="btn btn-sm">Click Me</button>
+      <button class="btn btn-lg fw-600">Click Me</button>
+      <button class="btn btn-ghost">Click Me</button>
+      <button class="btn btn-icon box-100px">gg</button>
+      <button class="btn btn-outline">Click Me</button>
+      <button class="btn btn-line">Click Me</button>
+      <button class="btn btn-primary">Click Me</button>
+    </div>
     <script>
-      const toggle = (selector, classNames, options = {}) => {
-        // Default options
-        const defaults = {
-          autoCollapse: false
-        }
-
-        // Merge provided options with defaults
-        const settings = { ...defaults, ...options }
-
-        // Convert classNames to an array if it's a string
-        const classArray = typeof classNames === 'string' ? classNames.split(/\s+/) : classNames
-
-        // Find the parent group (if auto-collapse is enabled)
-        const parentGroup = settings.autoCollapse
-          ? document.querySelector(selector).closest('.auto-collapse')
-          : null
-
-        // If auto-collapse is enabled, find and reset other accordions in the group
-        if (parentGroup) {
-          parentGroup.querySelectorAll('[data-ac]').forEach((el) => {
-            if (el !== document.querySelector(selector)) {
-              classArray.forEach((className) => {
-                el.classList.remove(className)
-              })
-            }
-          })
-        }
-
-        // Toggle classes on the target element
-        classArray.forEach((className) => {
-          document.querySelector(selector).classList.toggle(className)
-        })
-      }
-
+      document.querySelector('[viewBox]').style.width = '20px'
+      console.log(__nsx_tui_styles, document.querySelector('.my-svg').style)
       document.documentElement.setAttribute('child', __nsx_tui_styles.templates.all)
-      document.querySelectorAll('*').forEach((element) => {
+      document.querySelectorAll('*').forEach(element => {
         new __tenoxui_core.MakeTenoxUI({
           element,
           property: {
@@ -177,6 +194,10 @@
           attributifyPrefix: 'tui-'
         }).useDOM()
       })
+
+      function toggle() {
+        
+      }
     </script>
   </body>
 </html>
