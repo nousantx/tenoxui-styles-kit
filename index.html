@@ -1,36 +1,180 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  child="(input[type='checkbox']:checked ~ .bg-neutral-100 over-scroll [transition]-[max-height_0.3s]): h-mx-300px;"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <script src="./node_modules/@tenoxui/core/dist/tenoxui-full.min.js"></script>
+    <script src="./node_modules/@tenoxui/core/dist/tenoxui-full.js"></script>
+    <script src="./node_modules/@nousantx/someutils/dist/index.umd.min.js"></script>
     <script src="./node_modules/@nousantx/color-generator/dist/index.umd.min.js"></script>
     <script src="./node_modules/@nousantx/tenoxui-image-generator-config/plugin/index.umd.js"></script>
-    <script src="./dist/index.umd.min.js"></script>
-  </head>
-  <body>
-    <div class="bg-green-500">Hello</div>
-    <div class="[padding]-2rem bgi-[linear-gradient(125deg,_rgb({red-500}),_rgb({green-500}))]">
-      Hello
-    </div>
-    <div class="bg-green-600">Hello</div>
-    <div class="tenox">Hello</div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./dist/index.umd.js"></script>
 
-    <button class="btn">Click Me</button>
-    <button class="btn btn-sm">Click Me</button>
-    <button class="btn btn-lg">Click Me</button>
-    <button class="btn btn-ghost">Click Me</button>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', Sans-Serif;
+      }
+    </style>
+  </head>
+  <body class="p-20px">
+    <div
+      id="tenoxui-accordion"
+      class="flex flex-w-wrap gap-1rem"
+      child="
+      (.ac-container): flex flex-d-column;
+      (.ac-toggle): [all]-unset w-auto p-1rem bg-neutral-900 hover:bg-neutral-800 center;
+      (p): fs-1rem fw-500 ls--0.015em lh-1.4;
+      (p:not(:first-child)): mt-1rem;
+    "
+    >
+      <div class="ac-container">
+        <button class="ac-toggle" onclick="toggle(`[data-ac='1']`,'h-mx-300px')">
+          Toggle Content
+        </button>
+        <div class="h-mx-0 bg-neutral-100 over-scroll [transition]-[max-height_0.3s]" data-ac="1">
+          <div class="p-1rem">
+            <p>This is the collapsible content. Add any content you want here!</p>
+            <p>This is the collapsible content. Add any content you want here!</p>
+            <p>This is the collapsible content. Add any content you want here!</p>
+            <p>This is the collapsible content. Add any content you want here!</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-1rem ac-container">
+        <button class="ac-toggle" onclick="toggle(`[data-ac='2']`,'h-mx-300px')">
+          Toggle Content
+        </button>
+        <div class="h-mx-0 bg-neutral-100 over-scroll [transition]-[max-height_0.3s]" data-ac="2">
+          <div class="p-1rem">
+            <p>This is the collapsible content. Add any content you want here!</p>
+            <p>This is the collapsible content. Add any content you want here!</p>
+            <p>This is the collapsible content. Add any content you want here!</p>
+            <p>This is the collapsible content. Add any content you want here!</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-1rem ac-container">
+        <button class="ac-toggle" onclick="toggle(`[data-ac='3']`,'h-mx-300px')">
+          Toggle Content
+        </button>
+        <div class="h-mx-0 bg-neutral-100 over-scroll [transition]-[max-height_0.3s]" data-ac="3">
+          <div class="p-1rem">
+            <p>This is the collapsible content. Add any content you want here!</p>
+            <p>This is the collapsible content. Add any content you want here!</p>
+            <p>This is the collapsible content. Add any content you want here!</p>
+            <p>This is the collapsible content. Add any content you want here!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
-      console
-      document.documentElement.setAttribute('child', __nsx_tui_styles.stringTemplate)
-      document.querySelectorAll('*').forEach(element => {
+      const toggle = (selector, classNames, options = {}) => {
+        // Default options
+        const defaults = {
+          autoCollapse: false
+        }
+
+        // Merge provided options with defaults
+        const settings = { ...defaults, ...options }
+
+        // Convert classNames to an array if it's a string
+        const classArray = typeof classNames === 'string' ? classNames.split(/\s+/) : classNames
+
+        // Find the parent group (if auto-collapse is enabled)
+        const parentGroup = settings.autoCollapse
+          ? document.querySelector(selector).closest('.auto-collapse')
+          : null
+
+        // If auto-collapse is enabled, find and reset other accordions in the group
+        if (parentGroup) {
+          parentGroup.querySelectorAll('[data-ac]').forEach((el) => {
+            if (el !== document.querySelector(selector)) {
+              classArray.forEach((className) => {
+                el.classList.remove(className)
+              })
+            }
+          })
+        }
+
+        // Toggle classes on the target element
+        classArray.forEach((className) => {
+          document.querySelector(selector).classList.toggle(className)
+        })
+      }
+
+      document.documentElement.setAttribute('child', __nsx_tui_styles.templates.all)
+      document.querySelectorAll('*').forEach((element) => {
         new __tenoxui_core.MakeTenoxUI({
           element,
-          ...__nsx_img_tools.tenoxuiConfig,
+          property: {
+            ...__nsx_img_tools.property,
+            'space-y': '--tui-space-y',
+            'space-x': '--tui-space-x'
+          },
+          values: someutils.merge(__nsx_img_tools.values, {
+            px: '1px',
+            0: '0px',
+            0.5: '0.125rem',
+            1: '0.25rem',
+            1.5: '0.375rem',
+            2: '0.5rem',
+            2.5: '0.625rem',
+            3: '0.75rem',
+            3.5: '0.875rem',
+            4: '1rem',
+            5: '1.25rem',
+            6: '1.5rem',
+            7: '1.75rem',
+            8: '2rem',
+            9: '2.25rem',
+            10: '2.5rem',
+            11: '2.75rem',
+            12: '3rem',
+            14: '3.5rem',
+            16: '4rem',
+            20: '5rem',
+            24: '6rem',
+            28: '7rem',
+            32: '8rem',
+            36: '9rem',
+            40: '10rem',
+            44: '11rem',
+            48: '12rem',
+            52: '13rem',
+            56: '14rem',
+            60: '15rem',
+            64: '16rem',
+            72: '18rem',
+            80: '20rem',
+            96: '24rem'
+          }),
+          classes: someutils.merge(
+            __nsx_img_tools.classes,
 
-          attributify: true
+            {
+              width: {
+                tx: '20px'
+              }
+            }
+          ),
+          attributify: true,
+          attributifyPrefix: 'tui-'
         }).useDOM()
       })
     </script>
