@@ -14,8 +14,7 @@ const banner = `/*!
  *
  * Built Date: ${new Date().toString()}
  */`
-
-const sourcemap = false
+const sourcemap = false //# PROD_TRUE
 
 const config = {
   input: 'src/index.ts',
@@ -38,8 +37,10 @@ const config = {
             comments: false,
             preamble: banner
           },
+          mangle: false,
           mangle: true,
           compress: {
+            defaults: true,
             passes: 2
           }
         })
@@ -64,6 +65,12 @@ const config = {
           format: {
             comments: false,
             preamble: banner
+          },
+          mangle: false,
+          mangle: true,
+          compress: {
+            defaults: true,
+            passes: 2
           }
         })
       ]
@@ -86,6 +93,7 @@ const config = {
           },
           mangle: true,
           compress: {
+            defaults: true,
             passes: 2
           }
         })

@@ -47,10 +47,10 @@
   resolved "https://registry.yarnpkg.com/@nousantx/color-generator/-/color-generator-1.5.0.tgz#4dc47ada1c034b4bf6d8e37eccc01f5ce3f054ec"
   integrity sha512-M3VCUIqvbfyW2znsAIc/77MKUXqiCcvb3qI7kOm+vkUf5PGAyQ5VyPtVsMrLXi8FxbTrzsGv1SRZLq7bc1xelg==
 
-"@nousantx/someutils@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@nousantx/someutils/-/someutils-0.3.2.tgz#b05db2cc695063ab42291b96e132827e795a2968"
-  integrity sha512-CXipRG4DKm1sHdLW7c5vFUgQL06sdnxbPDGkitNmi4G47zFXVRIrZ41LEmuFJ/TfdZQz/fqrSQ9qCwUK6dlUEA==
+"@nousantx/someutils@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@nousantx/someutils/-/someutils-0.4.1.tgz#abef24063f33eb4b7d23fd8bb1868e30df733de0"
+  integrity sha512-+Or8qJyzmNZulE5+g96ziQF5yVywb1VxE4cYwS/Y1fhmz2Fy6oKeH/gU46AkOc6Y8RgkRCdo4d4u509HVQBdBg==
 
 "@nousantx/tenoxui-image-generator-config@^0.1.1":
   version "0.1.1"
