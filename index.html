@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>TenoxUI Styles Kit</title>
     <script src="./node_modules/@tenoxui/core/dist/tenoxui-full.js"></script>
     <script src="./node_modules/@nousantx/someutils/dist/index.umd.min.js"></script>
     <script src="./node_modules/@nousantx/color-generator/dist/index.umd.min.js"></script>
@@ -57,7 +57,12 @@
   <body>
     <div class="ac">
       <input type="checkbox" id="ac-toggle" checked="checked" />
-      <label for="ac-toggle" class="ac-label" onClick="document.querySelector('#ac-1').classList.toggle('h-mx-300px')">Toggle Content</label>
+      <label
+        for="ac-toggle"
+        class="ac-label"
+        onClick="document.querySelector('#ac-1').classList.toggle('h-mx-300px')"
+        >Toggle Content</label
+      >
       <div id="ac-1" class="ac-content" data-accordion="1">
         <p class="p-1rem">This is the collapsible content. Add any content you want here!</p>
         <p class="p-1rem">This is the collapsible content. Add any content you want here!</p>
@@ -133,10 +138,9 @@
       <button class="btn btn-primary">Click Me</button>
     </div>
     <script>
-      document.querySelector('[viewBox]').style.width = '20px'
       console.log(__nsx_tui_styles, document.querySelector('.my-svg').style)
       document.documentElement.setAttribute('child', __nsx_tui_styles.templates.all)
-      document.querySelectorAll('*').forEach(element => {
+      document.querySelectorAll('*').forEach((element) => {
         new __tenoxui_core.MakeTenoxUI({
           element,
           property: {
@@ -194,10 +198,6 @@
           attributifyPrefix: 'tui-'
         }).useDOM()
       })
-
-      function toggle() {
-        
-      }
     </script>
   </body>
 </html>
