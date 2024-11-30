@@ -5,6 +5,7 @@ import { button } from './button'
 import { filter } from './filter'
 import { radius } from './radius'
 import { spaceBetween } from './space-between'
+import { typography } from './typography'
 import { transform } from './transform'
 
 export default {
@@ -15,5 +16,6 @@ export default {
   filter,
   radius,
   space: spaceBetween,
+  text: typography,
   transform
 }
