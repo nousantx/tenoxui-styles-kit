@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" child="(input[type='checkbox']:checked ~ .ac-content): h-mx-300px;">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,16 +13,16 @@
     <link rel="stylesheet" href="./lib/styles.css" />
   </head>
   <body>
-    <div class="p-1rem flex ai-center flex-w-wrap gap-1rem">
-      <button class="btn bg-blue-600 hover:bg-blue-600 text-neutral-50 m-1rem">Custom</button>
-      <button class="btn btn-sm">Small</button>
-      <button class="btn">Normal</button>
-      <button class="btn btn-icon">I</button>
-      <button class="btn btn-lg fw-600">Large</button>
-      <button class="btn btn-ghost">Ghost</button>
-      <button class="btn btn-outline">Outline</button>
-      <button class="btn btn-line">Line</button>
-      <button class="btn btn-primary">Primary</button>
+    <div class="p-1rem" child="(p:not(:first-child)): mt-3rem;">
+      <p class="text-4xl">This is 4xl text size</p>
+      <p class="text-3xl">This is 3xl text size</p>
+      <p class="text-2xl">This is 2xl text size</p>
+      <p class="text-xl">This is xl text size</p>
+      <p class="text-lg">This is lg text size</p>
+      <p class="text-md">This is md text size</p>
+      <p class="text">This is default text size</p>
+      <p class="text-sm">This is sm text size</p>
+      <p class="text-xs">This is xs text size</p>
     </div>
     <script src="./lib/script.js"></script>
   </body>
