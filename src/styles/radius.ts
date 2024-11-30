@@ -17,8 +17,8 @@ export const radius = (className: string) => {
   directions.forEach((direction) => {
     Object.entries(sizes).forEach(([size, value]) => {
       const key = direction
-        ? `.${className}-${direction}${size ? `-${size}` : ''}`
-        : `.${className}${size ? `-${size}` : ''}`
+        ? `${className}-${direction}${size ? `-${size}` : ''}`
+        : `${className}${size ? `-${size}` : ''}`
       const valueClass = direction ? `br-${direction}-${value}` : `br-${value}`
       classes[key] = valueClass
     })
