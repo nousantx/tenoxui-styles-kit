@@ -1,8 +1,8 @@
 console.log(__nsx_tui_styles.templates.all)
-document.querySelectorAll('*').forEach(element => {
+document.querySelectorAll('*').forEach((element) => {
   new __tenoxui_core.MakeTenoxUI({
     element,
-        ...__nsx_img_tools.tenoxuiConfig,
+    ...__nsx_img_tools.tenoxuiConfig,
     property: {
       ...__nsx_img_tools.property,
       'bw-y': ['borderTopWidth', 'borderBottomWidth'],
