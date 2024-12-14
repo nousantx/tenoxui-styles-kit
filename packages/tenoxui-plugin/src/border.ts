@@ -1,4 +1,4 @@
-import { CoreConfig } from '@tenoxui/core/full'
+import type { CoreConfig } from '@tenoxui/core/full'
 import { createProperty } from '@nousantx/someutils'
 
 export const border: CoreConfig = {
