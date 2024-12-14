@@ -47,11 +47,6 @@
   resolved "https://registry.yarnpkg.com/@nousantx/color-generator/-/color-generator-1.5.1.tgz#6bae0cd3539ee3e1be7f4a369e5eaf1675071c46"
   integrity sha512-WO0EvIyHqbG05R3WAPY4kKsq4133qY+BC4crKT/NUfrDjeVfmi876A9kZDs26znYy1YQmq6ePBGWPufPPgV4XA==
 
-"@nousantx/nwm@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@nousantx/nwm/-/nwm-1.1.0.tgz#619ca397f449074e415ef2583cea2b681fa1c253"
-  integrity sha512-DnLPmS6H7QrK4U8u8yypD2a7naMFOaIG/EfuZYIacE1ivhfxkpCppt+RIXz2qb+EXYoheoVk2amoIRra6ycCdA==
-
 "@nousantx/someutils@^0.6.0":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@nousantx/someutils/-/someutils-0.6.1.tgz#dec7d3bfbdf644ad6793c3255ca9a8a8347cb5f5"

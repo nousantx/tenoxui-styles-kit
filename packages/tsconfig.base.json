@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "esnext",
+    "declaration": true,
+
+    "strict": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "paths": {
+      "@tenoxui/core/full": ["../node_modules/@tenoxui/core/dist/tenoxui-full.d.ts"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
