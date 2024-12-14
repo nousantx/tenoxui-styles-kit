@@ -6,10 +6,7 @@ const packageJson = JSON.parse(fs.readFileSync(path.resolve('package.json'), 'ut
 const name = '__nsx_tui_plugin'
 const banner = `/*!
  * ${packageJson.name} v${packageJson.version} | ${packageJson.license} License
- *
  * Copyright (c) 2024-present NOuSantx <nousantx@gmail.com>
- *
- * Built Date: ${new Date().toString()}
  */`
 
 const config = createConfig({
