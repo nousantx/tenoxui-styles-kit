@@ -17,7 +17,27 @@ document.querySelectorAll('*').forEach((element) => {
       'br-tl': 'borderTopLeftRadius',
       'br-tr': 'borderTopRightRadius',
       'br-bl': 'borderBottomLeftRadius',
-      'br-br': 'borderBottomRightRadius'
+      'br-br': 'borderBottomRightRadius',
+      'grid-cols': {
+        property: 'gridTemplateColumns',
+        value: 'repeat({0}, minmax(0, 1fr))'
+      },
+      'grid-rows': {
+        property: 'gridTemplateRows',
+        value: 'repeat({0}, minmax(0, 1fr))'
+      },
+      'col-start': 'gridColumnStart',
+      'col-end': 'gridColumnEnd',
+      'row-start': 'gridRowStart',
+      'row-end': 'gridRowEnd',
+      'col-span': {
+        property: 'gridColumn',
+        value: 'span {0} / span {0}'
+      },
+      'row-span': {
+        property: 'gridRow',
+        value: 'span {0} / span {0}'
+      }
     },
 
     attributify: true,
@@ -25,7 +45,13 @@ document.querySelectorAll('*').forEach((element) => {
     aliases: {
       ...__nsx_tui_styles.templates.all,
       cls1: 'bg-red-500',
-      cls2: 'box-200px cls1'
+      cls2: 'box-200px cls1',
+      'grid-column': '[gridTemplateColumns]-none',
+      'grid-cols-none': '[gridTemplateColumns]-none',
+      'grid-cols-subgrid': '[gridTemplateRoes]-subgrid',
+      'grid-rows-none': '[gridTemplateColumns]-none',
+      'grid-rows-subgrid': '[gridTemplateRows]-subgrid',
+      'col-span-full': '[gridColumn]-[1_/_-1]]'
     }
   }).useDOM()
 })
