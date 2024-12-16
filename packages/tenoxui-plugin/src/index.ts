@@ -5,6 +5,7 @@ import { ring } from './ring'
 import { gridSystem } from './grid'
 import { transform } from './transform'
 import { filter } from './filter'
+import { typography } from './typography'
 
 export const plugins: Record<string, CoreConfig> = {
   border,
@@ -12,7 +13,8 @@ export const plugins: Record<string, CoreConfig> = {
   ring,
   gridSystem,
   transform,
-  filter
+  filter,
+  typography
 }
 
 export default { border, boxShadow, ring, gridSystem, transform, filter }
